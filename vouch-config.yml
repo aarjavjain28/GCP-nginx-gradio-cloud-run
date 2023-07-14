@@ -9,8 +9,7 @@ vouch:
   cookie:
     # the domain that will be set for the cookie
     domain: my-service-3blf5p4gxa-nw.a.run.app  # Changed from localhost
-    # sameSite setting for the cookie, can be "None", "Lax", or "Strict"
-    sameSite: "None"
+
     # whether the cookie should only be sent over secure channels
     secure: false  # Changed from false
   # URL that Vouch will redirect users to when they are not authenticated
