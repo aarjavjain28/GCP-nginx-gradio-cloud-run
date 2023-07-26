@@ -2,35 +2,28 @@
 
 vouch:
   logLevel: debug
-  # specify the domains that you want vouch to authenticate
   domains:
     - my-service-3blf5p4gxa-nw.a.run.app  # Changed from localhost
     - thehutgroup.com
   cookie:
-    # the domain that will be set for the cookie
     domain: my-service-3blf5p4gxa-nw.a.run.app  # Changed from localhost
 
-    # whether the cookie should only be sent over secure channels
-    secure: false  # Changed from false
+    secure: false
   # URL that Vouch will redirect users to when they are not authenticated
   urls:
     login: https://my-service-3blf5p4gxa-nw.a.run.app/login  # Changed from localhost
 
 oauth:
-  # OAuth provider specifics
   provider: oidc
   client_id: "${OAUTH_CLIENT_ID}"
   client_secret: "${OAUTH_CLIENT_SECRET}"
-  # OAuth Client ID and Secret from Okta
-  # Okta endpoints
   auth_url: https://thg.okta.com/oauth2/default/v1/authorize
   token_url: https://thg.okta.com/oauth2/default/v1/token
   user_info_url: https://thg.okta.com/oauth2/default/v1/userinfo
-  # the scopes to request
   scopes:
     - openid
     - email
     - profile
   # the callback url, which is the /auth endpoint in your deployment
-  callback_url: https://my-service-3blf5p4gxa-nw.a.run.app/auth  # Changed from localhost
+  callback_url: https://my-service-3blf5p4gxa-nw.a.run.app/auth
 
